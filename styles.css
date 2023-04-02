@@ -1,0 +1,266 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  --light-red: hsl(0, 80%, 86%);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--desaturated-red);
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+.circle {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  /* background-color: red; */
+  border: 0.2rem solid var(--light-red);
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 2.2rem;
+  color: var(--dark-grayish-red);
+}
+.text {
+  line-height: 1rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.text p {
+  font-weight: 700;
+}
+.image-mobile {
+  width: 100%;
+}
+.image-desktop {
+  display: none;
+}
+.content-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem 5rem 2rem;
+}
+
+h1 {
+  letter-spacing: 0.6rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2.2rem;
+  font-weight: 300;
+}
+
+span {
+  display: block;
+  color: var(--dark-grayish-red);
+  font-weight: 700;
+}
+
+.content-box2 {
+  padding: 1.5rem 0;
+  line-height: 1.4rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.error-img {
+  display: none;
+  position: absolute;
+  top: 0.6rem;
+  right: 5rem;
+}
+
+form {
+  width: 100%;
+  position: relative;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+input[type="text"] {
+  padding: 0.9rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  border: 1px solid var(--desaturated-red);
+  font-family: inherit;
+  background: transparent;
+}
+input[type="text"]::placeholder {
+  color: var(--desaturated-red);
+  font-family: inherit;
+}
+
+button {
+  position: absolute;
+  padding: 0.9rem 1.8rem;
+  border-radius: 1.8rem;
+  right: 0;
+  top: -0.25rem;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 3px 3px 19px 0 #ce9797;
+}
+
+.error-msg, .success-msg{
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.error-msg{
+  color: rgb(253, 14, 14);
+}
+
+.success-msg{
+  color: rgb(22, 170, 22);
+}
+
+.error-border{
+  border: 2px solid red;
+}
+
+input[type="text"]:focus{
+  box-shadow: 3px 3px 19px 0 #ce9797;
+  outline: none;
+}
+
+button[type="submit"]:hover{
+  /* opacity: 0.9; */
+  background: rgb(252, 201, 201);
+}
+
+/* media queries */
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  h1 {
+    letter-spacing: 0.7rem;
+    line-height: 2.6rem;
+  }
+  .content-box2 {
+    margin-bottom: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 426px) {
+  body {
+    margin: 0 7rem 0 7rem;
+  }
+  h1 {
+    font-size: 2.6rem;
+    line-height: 2.8rem;
+  }
+  span {
+    font-weight: 600;
+  }
+  .content-box2 {
+    font-size: 1rem;
+    padding: 1.5rem 0 1.8rem 0;
+  }
+  form {
+    margin: 0 7rem 0 7rem;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    margin: 0 8rem 0 8rem;
+  }
+  h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  .content-box2 {
+    font-size: 1.2rem;
+    padding: 2rem 0 2.5rem 0;
+  }
+  form {
+    margin: 0 7rem 0 7rem;
+    width: 70%;
+  }
+  input[type="text"] {
+    padding: 1rem;
+  }
+  button {
+    top: -0.2rem;
+    right: -0.4rem;
+  }
+}
+
+@media screen and (min-width: 1246px) and (max-width: 1440px) {
+  body {
+    margin: 0 0 0 8rem;
+    /* overflow: hidden; */
+  }
+  .header{
+    padding: 4rem 2.2rem 0 2.2rem;
+  }
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10rem;
+  }
+  .content-box{
+    margin-top: -7rem;
+    padding-left: 2rem;
+  }
+  h1{
+    text-align: left;
+    letter-spacing: 0.9rem;
+    font-size: 3.5rem;
+    line-height: 3.8rem;
+  }
+  span{
+    letter-spacing: 0.9rem;
+  }
+  .content-box2{
+    text-align: left;
+    font-size: 1rem;
+    padding: 2rem 0 2.8rem 0;
+    line-height: 1.6rem;
+  }
+  form{
+    width: 100%;
+  }
+  .image-mobile {
+    display: none;
+  }
+  .image-desktop {
+    display: block;
+    margin-top: -6rem;
+    min-height: 80vh;
+  }
+  button{
+    padding: 0.95rem 2.5rem;
+    top: -0.2rem;
+  }
+  .error-img {
+    right: 6rem;
+  }
+}
